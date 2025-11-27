@@ -35,20 +35,21 @@ export default function NavItems() {
     },
   };
 
-  const linkVariants = {
+  // FIXED: Properly typed link variants
+  const linkVariants: Variants = {
     hidden: { opacity: 0, x: 50 },
     visible: (i: number) => ({
       opacity: 1,
       x: 0,
       transition: { delay: i * 0.05, type: "spring", stiffness: 300 },
     }),
+    exit: { opacity: 0, x: 50 }
   };
 
   return (
     <>
       {/* Desktop Navigation */}
       <div className="hidden md:flex w-full px-10 z-50 flex-row-reverse items-center justify-between mx-auto max-w-7xl h-16">
-        {/* Logo */}
         <Image 
           src="/assets/loko.png" 
           alt="Logo" 
@@ -57,10 +58,7 @@ export default function NavItems() {
           className="object-contain" 
         />
         
-        <ul 
-          className="flex gap-5 lg:gap-6 xl:gap-10 text-lg" 
-          style={{ fontFamily: "'Fustat', serif" }}
-        >
+        <ul className="flex gap-5 lg:gap-6 xl:gap-10 text-lg" style={{ fontFamily: "'Fustat', serif" }}>
           {NAV_ITEMS.map((item) => (
             <li key={item.href} className="relative">
               <Link
@@ -80,7 +78,6 @@ export default function NavItems() {
 
       {/* Mobile Navigation */}
       <div className="md:hidden w-full flex items-center justify-between px-4 py-3 sticky top-0 z-50 bg-transparent">
-        {/* Logo */}
         <Image 
           src="/assets/loko.png" 
           alt="Logo" 
@@ -89,7 +86,6 @@ export default function NavItems() {
           className="object-contain" 
         />
 
-        {/* Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="relative w-10 h-10 flex flex-col items-center justify-center transition-all duration-300 focus:outline-none z-50"
@@ -112,7 +108,6 @@ export default function NavItems() {
           />
         </button>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -122,7 +117,6 @@ export default function NavItems() {
               animate="visible"
               exit="exit"
             >
-              {/* Logo inside menu */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -139,7 +133,6 @@ export default function NavItems() {
                 />
               </motion.div>
 
-              {/* Navigation Items */}
               {NAV_ITEMS.map((item, index) => (
                 <motion.div
                   key={item.href}
@@ -147,7 +140,7 @@ export default function NavItems() {
                   variants={linkVariants}
                   initial="hidden"
                   animate="visible"
-                  exit="hidden"
+                  exit="exit"
                   className="w-full mb-4 relative"
                 >
                   <Link
