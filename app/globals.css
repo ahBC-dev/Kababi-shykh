@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&family=Fustat:wght@200..800&display=swap');
+
 @import "tailwindcss";
+
+
+body {
+  font-family: 'Beiruti', sans-serif;
+}
+
+header {
+  font-family: 'Fustat', serif;
+}
 
 :root {
   --background: #ffffff;
@@ -23,4 +34,94 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.traditional-text-strong {
+  color: #C19A6B; /* antique bronze */
+  text-shadow: 
+    0 0 4px rgba(0,0,0,0.6),
+    0 0 8px rgba(0,0,0,0.4);
+  letter-spacing: 0.7px;
+  font-weight: 700;
+  filter: contrast(1.1);
+}
+
+.bg-woody {
+  background-image: url('/assets/066.png');
+  background-repeat: repeat;
+  background-size: cover;
+  background-color: #a6733c; /* golden-brown / honey wood */
+  background-blend-mode: multiply; 
+}
+
+.bg-woody-two {
+  background-image: url('/assets/100.png');
+  background-repeat: repeat;
+  background-size: cover;
+  background-color: #7C2D12; /* Dark red-brown */
+  background-blend-mode: overlay;
+}
+
+
+.bg-woody-three {
+  background-image: url('/assets/gallery4.PNG');
+  background-repeat: repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+
+.bg-woody-four {
+  background-image: url('/assets/100.png');
+  background-repeat: repeat;
+  background-size: cover;
+  background-color: #C53D3D; /* Pomegranate Red - ancient Persian symbol */
+  background-blend-mode: multiply;
+}
+
+
+.golden-brown {
+  color: #F1D18A;           /* same yellow/golden tone */
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-shadow: 
+    0 1px 2px rgba(0,0,0,0.2),
+    0 2px 4px rgba(0,0,0,0.1);
+}
+
+.golden-brown-bold {
+  color: #F1D18A;           /* same yellow/golden tone */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 
+    0 1px 2px rgba(0,0,0,0.2),
+    0 2px 4px rgba(0,0,0,0.1);
+}
+
+.bg-golden {
+  background-color: #F1D18A; /* lighter, more yellow/golden */
+}
+
+
+.btn-woody {
+  font-family: 'Beiruti', sans-serif;
+  font-weight: 500;
+  color: #2c1a12;
+  background-color: #d0a120; /* Your chosen brown */
+  background-image: url('/assets/073.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-blend-mode: multiply;
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.btn-woody:hover {
+  background-color: #d8b421; /* Slightly lighter brown */
+  box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
 }
