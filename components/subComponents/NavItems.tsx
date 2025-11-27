@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
@@ -22,10 +23,16 @@ export default function NavItems() {
     return pathname.startsWith(path);
   };
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     hidden: { x: "100%" },
-    visible: { x: 0, transition: { type: "spring", stiffness: 300, damping: 30 } },
-    exit: { x: "100%", transition: { type: "spring", stiffness: 300, damping: 30 } },
+    visible: { 
+      x: 0, 
+      transition: { type: "spring", stiffness: 300, damping: 30 } 
+    },
+    exit: { 
+      x: "100%", 
+      transition: { type: "spring", stiffness: 300, damping: 30 } 
+    },
   };
 
   const linkVariants = {
@@ -41,9 +48,19 @@ export default function NavItems() {
     <>
       {/* Desktop Navigation */}
       <div className="hidden md:flex w-full px-10 z-50 flex-row-reverse items-center justify-between mx-auto max-w-7xl h-16">
-        {/* Logo (no bg) */}
-        <Image src="/assets/loko.png" alt="Logo" width={65} height={25} className="object-contain" />
-        <ul className="flex gap-5 lg:gap-6 xl:gap-10 text-lg" style={{ fontFamily: "'Fustat', serif" }}>
+        {/* Logo */}
+        <Image 
+          src="/assets/loko.png" 
+          alt="Logo" 
+          width={65} 
+          height={25} 
+          className="object-contain" 
+        />
+        
+        <ul 
+          className="flex gap-5 lg:gap-6 xl:gap-10 text-lg" 
+          style={{ fontFamily: "'Fustat', serif" }}
+        >
           {NAV_ITEMS.map((item) => (
             <li key={item.href} className="relative">
               <Link
@@ -62,12 +79,17 @@ export default function NavItems() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden w-full flex items-center justify-between px-4 py-3 sticky top-0 z-50 bg-transparent ">
+      <div className="md:hidden w-full flex items-center justify-between px-4 py-3 sticky top-0 z-50 bg-transparent">
+        {/* Logo */}
+        <Image 
+          src="/assets/loko.png" 
+          alt="Logo" 
+          width={65} 
+          height={25} 
+          className="object-contain" 
+        />
 
-        {/* Logo (no bg) */}
-        <Image src="/assets/loko.png" alt="Logo" width={65} height={25} className="object-contain" />
-
-        {/* Hamburger */}
+        {/* Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="relative w-10 h-10 flex flex-col items-center justify-center transition-all duration-300 focus:outline-none z-50"
@@ -90,7 +112,7 @@ export default function NavItems() {
           />
         </button>
 
-        {/* Mobile menu */}
+        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -113,11 +135,11 @@ export default function NavItems() {
                   alt="Menu Logo"
                   width={100}
                   height={40}
-                  className="object-contain rop-shadow-[0_0_15px_rgba(255,215,0,0.7)] filter brightness-110 animate-pulse-slow"
+                  className="object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.7)] filter brightness-110 animate-pulse-slow"
                 />
               </motion.div>
 
-              {/* Nav Items */}
+              {/* Navigation Items */}
               {NAV_ITEMS.map((item, index) => (
                 <motion.div
                   key={item.href}
