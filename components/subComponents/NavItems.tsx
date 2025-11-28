@@ -80,13 +80,15 @@ export default function NavItems() {
 
       {/* Mobile Navigation */}
       <div className="md:hidden w-full flex items-center justify-between px-4 py-3 sticky top-0 z-50 bg-transparent">
-        <Image 
-          src="/assets/loko.png" 
-          alt="Logo" 
-          width={65} 
-          height={25} 
-          className="object-contain" 
-        />
+        <Link href="/">
+          <Image 
+            src="/assets/loko.png" 
+            alt="Logo" 
+            width={65} 
+            height={25} 
+            className="object-contain" 
+          />
+        </Link>
 
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -148,7 +150,7 @@ export default function NavItems() {
                   <Link
                     href={item.href}
                     className={`block w-full text-2xl py-2 font-light transition-colors duration-300 ${
-                      isActive(item.href) ? "text-amber-400" : "text-golden"
+                      isActive(item.href) ? "text-amber-400" : "text-neutral-100"
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
