@@ -59,7 +59,7 @@ export default function MenuPage() {
     <main className="w-full min-h-screen bg-zinc-900/5 py-28 px-6 md:px-20">
         {/* Fixed Background */}
         <div className="fixed inset-0 -z-20 bg-woody-two" />
-        <div className="fixed inset-0 -z-10 bg-black/40" />
+        <div className="fixed inset-0 -z-10 bg-black/60" />
 
       {/* Header */}
       <h1

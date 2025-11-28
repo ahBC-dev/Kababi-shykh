@@ -10,7 +10,7 @@ import { FaLink } from "react-icons/fa";
 
 export default function Footer() {
     return (
-        <footer className="w-full flex flex-col justify-center items-center bg-black/70 text-amber-300 pt-12 pb-6 border-t border-amber-400/10">
+        <footer className="w-full flex flex-col justify-center items-center bg-black/70 text-amber-300 pt-12 pb-6 border-t border-amber-400/10 backdrop-blur-sm">
             
             {/* --- TOP GRID --- */}
             <div className="max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-10 px-6 md:px-12">

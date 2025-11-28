@@ -44,7 +44,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---------------------------- HISTORY SECTION ---------------------------- */}
-      <section className="w-full bg-black/30 py-20 px-6 md:px-20">
+      <section className="w-full bg-amber-400/30 py-20 px-6 md:px-20">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
@@ -223,7 +223,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---------------------------- CTA SECTION ---------------------------- */}
-      <section className="w-full bg-amber-400/10 py-20 px-6 md:px-20">
+      <section className="w-full bg-amber-400/30 py-20 px-6 md:px-20">
         <div className="max-w-4xl mx-auto text-center">
           
           <div className="bg-zinc-900/80 rounded-2xl p-12 border border-amber-400/30 shadow-2xl">

@@ -50,13 +50,15 @@ export default function NavItems() {
     <>
       {/* Desktop Navigation */}
       <div className="hidden md:flex w-full px-10 z-50 flex-row-reverse items-center justify-between mx-auto max-w-7xl h-16">
-        <Image 
-          src="/assets/loko.png" 
-          alt="Logo" 
-          width={65} 
-          height={25} 
-          className="object-contain" 
-        />
+        <Link href="/">
+          <Image 
+            src="/assets/loko.png" 
+            alt="Logo" 
+            width={65} 
+            height={25} 
+            className="object-contain" 
+          />
+        </Link>
         
         <ul className="flex gap-5 lg:gap-6 xl:gap-10 text-lg" style={{ fontFamily: "'Fustat', serif" }}>
           {NAV_ITEMS.map((item) => (

@@ -8,7 +8,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen">
       <div className="fixed inset-0 -z-20 bg-woody-two" />
-      <div className="fixed inset-0 -z-10 bg-black/50" />
+      <div className="fixed inset-0 -z-10 bg-indigo-500/20" />
       
       {/* Single Section Contact */}
       <section className="w-full min-h-screen flex items-center justify-center px-6 md:px-10 lg:px-18 xl:px-24 py-24">
